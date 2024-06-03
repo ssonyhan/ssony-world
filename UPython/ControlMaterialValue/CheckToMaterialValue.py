@@ -1,22 +1,31 @@
+
 import unreal
 
-# 선택된 에셋 가져오기
 selected_assets = unreal.EditorUtilityLibrary.get_selected_assets()
 
-
+# 확인하고자 하는 파라미터 이름
 parameter_name = "UseWorldMapping"
-i : list[str] = []
 
-# 이름가져오기
-for i in selected_assets:
+# get boolean parameter
+for asset in selected_assets:
+    if isinstance(asset, unreal.MaterialInstance):
+        # 파라미터 이름과 값을 가져오기
+        found = unreal.MaterialEditingLibrary.get_material_instance_static_switch_parameter_value(asset, parameter_name)
+        if found:
+            print(f"Asset: {asset.get_name()}", parameter_name, ">>>", found )
+        else: 
+            pass
+    else:
+        pass
 
-# # 각 선택된 에셋에 대해 스칼라 파라미터 읽기
-#     for asset in selected_assets:
-#         asset = unreal.MaterialEditingLibrary.get_material_instance_scalar_parameter_value(asset,parameter_name)
-#         print(i.get_name(), asset)      
 
-
-# 각 선택된 에셋에 대해 Boolean 파라미터 읽기
-    for asset in selected_assets:
-        asset = unreal.MaterialEditingLibrary.get_material_instance_static_switch_parameter_value( asset , parameter_name)
-        print(i.get_name(), asset)
+# # get scalar parameter
+# for asset in selected_assets:
+#     if isinstance(asset, unreal.MaterialInstance):
+#         found = unreal.MaterialEditingLibrary.get_material_instance_scalar_parameter_value(asset,parameter_name)
+#         if found:
+#             print(f"Asset: {asset.get_name()}", parameter_name, ">>>", found )
+#         else: 
+#             pass
+#     else:
+#         pass
