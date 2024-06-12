@@ -10,6 +10,7 @@ for asset in selected_assets:
     asset_path = unreal.EditorAssetLibrary.get_path_name_for_loaded_asset(asset)
     folder_path = "/".join(asset_path.split("/")[:-1])
     new_asset_name = "Test_{:03d}".format(start_num)
+
     start_num += 1
 
     # 새로운 에셋 경로 생성
