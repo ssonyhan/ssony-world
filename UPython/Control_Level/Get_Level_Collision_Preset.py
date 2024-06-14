@@ -8,9 +8,26 @@ for actor in selected_actors:
     components = actor.get_components_by_class(unreal.PrimitiveComponent)
     
     for component in components:
-        print ( actor.get_actor_label(), ">> Collision Presets <<" ,component.get_collision_profile_name()) #콜리전 프리셋 프린트 Default = BlockAll
-        print ( actor.get_actor_label(), ">> Collision Enabled <<" ,component.get_collision_enabled())
-        print ( actor.get_actor_label(), ">> Object Tpye<<" ,component.get_collision_object_type())
+
+        compcol_preset = component.get_collision_profile_name()
+        compcol_enabled = component.get_collision_enabled()
+        compcol_object = component.get_collision_object_type()
+
+
+        compcol_enabled_str = str(compcol_enabled).replace("CollisionEnabled.", "")
+        compcol_object_str = str(compcol_object).replace("CollisionChannel.ECC_", "")
+
+
+
+
+        print ( actor.get_actor_label(), ">> Collision Presets <<" ,compcol_preset) #콜리전 프리셋 프린트 Default = BlockAll
+        print ( actor.get_actor_label(), ">> Collision Enabled <<" , compcol_enabled_str)
+        print ( actor.get_actor_label(), ">> Object Tpye<<" ,compcol_object_str)
+        
+        # rint ( actor.get_actor_label(), ">> Object Tpye<<" , compcol_object.value) # 뒤에 넘버링만 나옴
+    
+
+
 
         print("--------------------------------------------------------------------------------------------")
 
