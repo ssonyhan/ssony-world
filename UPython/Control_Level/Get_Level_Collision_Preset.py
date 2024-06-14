@@ -8,6 +8,21 @@ for actor in selected_actors:
     components = actor.get_components_by_class(unreal.PrimitiveComponent)
     
     for component in components:
-        print ( actor.get_actor_label(), ">> Collision Presets <<" ,component.get_collision_profile_name())
+        print ( actor.get_actor_label(), ">> Collision Presets <<" ,component.get_collision_profile_name()) #콜리전 프리셋 프린트 Default = BlockAll
+        print ( actor.get_actor_label(), ">> Collision Enabled <<" ,component.get_collision_enabled())
+        print ( actor.get_actor_label(), ">> Object Tpye<<" ,component.get_collision_object_type())
 
-        
+        print("--------------------------------------------------------------------------------------------")
+
+        for compcolchannel in unreal.CollisionChannel:
+            response_type = component.get_collision_response_to_channel(compcolchannel)
+            print("CollisionChannel: {}, responseChannel: {}".format( compcolchannel, response_type)) 
+
+
+ 
+
+
+
+ 
+
+
