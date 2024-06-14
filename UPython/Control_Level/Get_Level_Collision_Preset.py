@@ -33,7 +33,7 @@ for actor in selected_actors:
 
         for compcolchannel in unreal.CollisionChannel:
             response_type = component.get_collision_response_to_channel(compcolchannel)
-            print("CollisionChannel: {}, responseChannel: {}".format( compcolchannel.get_display_name(), response_type.get_display_name())) 
+            print("Channel: {}, response: {}".format( compcolchannel.get_display_name(), response_type.get_display_name())) 
 
 
  
