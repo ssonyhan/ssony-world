@@ -48,16 +48,16 @@ for actor in selected_actors:
         
                 for compcolchannel in unreal.CollisionChannel:
 
-                    # # # 모든 채널 읽기 
-                    # response_type = component.get_collision_response_to_channel(compcolchannel)
-                    # print("Channel: {} >>>> {}".format(compcolchannel.get_display_name(), response_type.get_display_name()))
+                    #모든 채널 읽기 
+                    response_type = component.get_collision_response_to_channel(compcolchannel)
+                    print("Channel: {} >>>> {}".format(compcolchannel.get_display_name(), response_type.get_display_name()))
 
 
                     # 특정 채널 읽기
-                    if compcolchannel is unreal.CollisionChannel.ECC_GROUND :
-                        select_response_type = component.get_collision_response_to_channel(compcolchannel)
-                        print("Channel: {} >>>> {}".format(compcolchannel.get_display_name(), select_response_type.get_display_name()))
+                    # if compcolchannel is unreal.CollisionChannel.ECC_GROUND :
+                    #     select_response_type = component.get_collision_response_to_channel(compcolchannel)
+                    #     print("Channel: {} >>>> {}".format(compcolchannel.get_display_name(), select_response_type.get_display_name()))
               
 
-    print("============================================================================================")
+                print("============================================================================================")
 
