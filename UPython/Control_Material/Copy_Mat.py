@@ -4,17 +4,17 @@ import unreal
 
 selected_assets = unreal.EditorLevelLibrary.get_selected_level_actors()
 
-destination_path = '/Game/CineMaps/02_Office/Office/Lv_Office_Office_A_01/00_Material/'
+destination_path = '/Game/TA/Users/ssony/0_mat'
 editor_asset_library = unreal.EditorAssetLibrary()
 
 # MI Copy
 def copy_material_instance(material_instance, destination_path):
     material_instance_name = material_instance.get_name()
     new_path = destination_path + material_instance_name
-    if not editor_asset_library.duplicate_asset(material_instance.get_path_name(), new_path):
-        unreal.log_error(f"Failed to copy {material_instance_name} to {destination_path}")
-    else:
+    if editor_asset_library.duplicate_asset(material_instance.get_path_name(), new_path):
         unreal.log(f"Copied {material_instance_name} to {destination_path}")
+    else:
+        unreal.log_error(f"Failed to copy {material_instance_name} to {destination_path}")
 
 
 

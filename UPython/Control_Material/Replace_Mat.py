@@ -3,7 +3,7 @@
 import unreal
 
 selected_assets = unreal.EditorLevelLibrary.get_selected_level_actors()
-source_path = '/Game/CineMaps/02_Office/Office/Lv_Office_Office_A_01/00_Material/'
+source_path = '/Game/TA/Users/ssony/0_mat/'
 
 
 #리플레이스 머트리얼 
