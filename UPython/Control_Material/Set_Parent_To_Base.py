@@ -10,7 +10,7 @@ for each in selected_assets :
     if each.__class__ == unreal.MaterialInstanceConstant :
 
         get_parent_mat = each.get_editor_property('parent')
-        get_Master_mat = each.get_base_material()
+        get_Master_mat = each.get_()
 
         if get_parent_mat.__class__ == unreal.MaterialInstanceConstant :
 
