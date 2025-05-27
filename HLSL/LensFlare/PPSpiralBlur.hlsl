@@ -33,3 +33,6 @@ for (int i = 0; i < SampleCount; i++)
 
 PixelColor /= (SampleCount - NumIgnorePixels);
 return float4((PixelColor/2), 1);
+
+
+//output if a: 1, b : 0, a>b :Customhlsl, a<b : postprocess input0
