@@ -4,3 +4,6 @@ return 1;
 #include "/Engine/Private/TonemapCommon.ush"
 
 void ToneMap(){
+
+//input None
+//Multiply (Include, Texture) -> return FilmToneMapInverse(Input);
